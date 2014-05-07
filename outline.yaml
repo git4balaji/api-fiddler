@@ -3,3 +3,7 @@ WEATHER TODAY:
     high: integer
     low: integer
     percipitation: integer
+STOCKS TODAY:
+    nasqaq: integer
+    dow-jones: integer
+    nyse: integer
