@@ -1,0 +1,5 @@
+WEATHER:
+	City: String
+	High: Integer
+	Low: Integer
+	Percipitation: Integer
