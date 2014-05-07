@@ -1,5 +1,5 @@
-WEATHER:
-	City: String
-	High: Integer
-	Low: Integer
-	Percipitation: Integer
+WEATHER TODAY:
+    city: string
+    high: integer
+    low: integer
+    percipitation: integer
