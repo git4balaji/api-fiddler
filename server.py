@@ -4,7 +4,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import os
 
 #Create custom HTTPRequestHandler class
-class KodeFunHTTPRequestHandler(BaseHTTPRequestHandler):
+class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     
     #handle GET command
     def do_GET(self):
@@ -35,7 +35,7 @@ def run():
     #ip and port of servr
     #by default http server port is 80
     server_address = ('127.0.0.1', 8080)
-    httpd = HTTPServer(server_address, KodeFunHTTPRequestHandler)
+    httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
     print('http server is running...')
     httpd.serve_forever()
     
