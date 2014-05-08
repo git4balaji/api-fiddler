@@ -1,9 +1,9 @@
-WEATHER:
+weather:
     city: string
     high: integer
     low: integer
     percipitation: integer
-STOCKS:
+stocks:
     nasdaq: integer
     dow jones: integer
     nyse: integer
