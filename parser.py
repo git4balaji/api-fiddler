@@ -44,7 +44,3 @@ class Object:
     
     def json(self):
         return {name: self.gen(datatype) for name,datatype in self.items.items()}
-
-data = yaml.load( open('outline.yaml', 'r') )
-myobject = ObjectParser(data)
-print(myobject.getData('WEATHER TODAY'))
