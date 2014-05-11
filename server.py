@@ -4,6 +4,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from parser import ObjectParser
 import yaml
 import os
+import time
 
 #Create custom HTTPRequestHandler class
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
@@ -11,8 +12,10 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     #handle GET command
     def do_GET(self):
         rootdir = os.getcwd() + '/' #file location
-        print(self.path)
         try:
+            if self.path == '/':
+                self.path = "/homepage.html"
+                
             if self.path.endswith('.html'):
                 f = open(rootdir + self.path) #open requested file
 
@@ -45,17 +48,26 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
                 return
                       
         except IOError:
-            self.send_error(404, 'file not found')
+            self.send_error(404, 'Invalid Path')
     
 def run():
-    print('http server is starting...')
-
-    #ip and port of servr
-    #by default http server port is 80
-    server_address = ('127.0.0.1', 8080)
-    httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
-    print('http server is running...')
-    httpd.serve_forever()
+    print('Http Server is starting...')
     
+    #ip and port of servr
+    #by default http server port is 8080
+    HOST_NAME = '127.0.0.1'
+    PORT_NUMBER = 8080
+    
+    server_address = (HOST_NAME, PORT_NUMBER)
+    httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
+    print(time.asctime(), ": Server Started - %s:%s" % (HOST_NAME, PORT_NUMBER))
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    httpd.server_close()
+    print();
+    print(time.asctime(), ": Server Stopped - %s:%s" % (HOST_NAME, PORT_NUMBER))
+
 if __name__ == '__main__':
     run()

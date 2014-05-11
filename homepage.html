@@ -1,6 +1,52 @@
 <head>
- <title>Project api-fiddler</title>
+ <title>API Fiddler</title>
 </head>
 <body>
 <body style="background:#80BFFF">
- <h1>Balaji Arun, Suwarna Poudel, Akrit Mohapatra, Gurjeet Singh</h1>
+<h1>API Fiddler</h1>
+
+<p>This application is capable of generating random JSON data to help accelerate the development of front-end Web Apps and Mobile Apps.</p>
+
+<h2>Project Description</h2>
+
+<p>Usually the development of front-end Web Apps and Mobile Apps will begin after the backend that serves data is ready. However, through this application, developers can get proxy data to build the User Interface and then link to their backend service once it is ready.</p>
+
+<h2>Features</h2>
+
+<p>Current features include weather and stocks. It is setup to generate random strings and integers using a random-generator. It also has a parser to generate JSON data.
+More features can be added on demand. Suggestions are welcome!</p>
+
+<h2>How to Extend</h2>
+
+<p>The program can be easily extended to add functionality. Just edit the randomgen.py file and add definitions similar to string and integer that can return a string. For example to implement double, generate a random double and return it as a string. Then, you can access them just like you did for string and integer by using it as a type in outline.yaml file</p>
+
+<p>You can add new urls by editing the outline.yaml file. Just define a url string and give it some properties that needs to be returned when the url is called.
+
+<h2>Prerequesites</h2>
+
+<ul>
+	<li>Python 3</li>
+	<li>PyYAML - pyyaml.org</li>
+</ul>
+
+<h2>How to Run</h2>
+
+<ul>
+	<li>Clone the repository on your LOCAL machine (not the ECE2524 VM)</li>
+	<li>For Windows users running PuttY, download github for Windows and clone the repository and use python3</li>
+	<li>Install PyYAML - Instructions given below</li>
+	<li>Go into the cloned directory, and run ./server.py</li>
+	<li>Launch your browser and go to http://localhost:8080/weather or http://localhost:8080/stocks<li>
+	<li>Modify the outline.yaml file to add more request functionalities (only integer and string are currently supported)</li>
+</ul>
+
+<h2>Support</h2>
+
+<h3>To Install PyYAML</h3>
+
+<ul>
+	<li>Download the zip file of latest version from PyYAML (pyyaml.org). Windows users use the installer.</li>
+<li>Unzip it and run the command: python3 setup.py install</li>
+</ul>
+
+</body>
