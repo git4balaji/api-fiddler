@@ -7,3 +7,6 @@ stocks:
     nasdaq: integer
     dow jones: integer
     nyse: integer
+nextflight:
+   airline: string
+   FlightNo: integer   
